@@ -1,0 +1,32 @@
+sub Right_8()
+
+'This is from a recorded macro in excel
+Sub Last8VIN()
+'
+' Last8VIN Macro
+    Columns("AF:AF").Select
+    Selection.Insert Shift:=xlToRight
+    Range("AF2").Select
+    ActiveCell.FormulaR1C1 = "=RIGHT(RC[-1],8)"
+    Range("AF3").Select
+End Sub
+
+
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Insert Shift:=xlToLeft
+
+Range(Selection, Selection.End(xlDown).Offset(0,1).
+
+
+Dim lastRow As Long
+    Dim i As Long
+    
+    lastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    
+    ' Loop through all rows from 1 to the last row
+    For i = 2 To lastRow
+        ' Place the last 8 characters of Cell(i, 1) (Column A) into Cell(i, 2) (Column B)
+        Cells(i, 2).Value = Right(Cells(i, 1).Value, 8)
+    Next i
+
+end sub
